@@ -58,6 +58,9 @@ const Navbar = () => {
                 <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/service">service</Link>
               </li >
               <li className="mt-4">
+                <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/blog">blog</Link>
+              </li >
+              <li className="mt-4">
                 <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/contact">contact</Link>
               </li>
             </ul>
