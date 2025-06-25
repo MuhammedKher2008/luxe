@@ -1,0 +1,5 @@
+#anacontaier {
+  background: url(./components/image/background.png)
+    center/cover no-repeat;
+  height: 60vh;
+}

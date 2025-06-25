@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleSelectChange = (e) => {
+    const path = e.target.value;
+    if (path) {
+      navigate(path);
+    }
+  };
+
   const logo = {
     fontSize: "20px",
     textTransform: "uppercase",
@@ -23,19 +32,33 @@ const Navbar = () => {
         </button>
         <div class="offcanvas offcanvas-end" id="offcanvas" tabindex="-1">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title">title</h5>
             <button class="btn-close" data-bs-dismiss="offcanvas"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav">
-              <li>
-                <Link to="/">home</Link>
+            <ul class="navbar-nav  ">
+              <li className="mt-4 ">
+                <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/">home</Link>
               </li>
-              <li>
-                <Link to="/service">service</Link>
+              <li className="mt-4">
+                <select
+                  className="form-control w-25 text-center justify-content-center"
+                  onChange={handleSelectChange}
+                  name=""
+                  id=""
+                >
+                  <option>hotel </option>
+                  <option value="/hotel">hotel </option>
+                  <option value="/hotel">luxe hotel </option>
+                  <option value="/hotel">deluxe hotel </option>
+                  <option value="/hotel">king hotel </option>
+                  <option value="/hotel">fivestart hotel </option>
+                </select>
               </li>
-              <li>
-                <Link to="/contact">contact</Link>
+              <li className="mt-4">
+                <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/service">service</Link>
+              </li >
+              <li className="mt-4">
+                <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/contact">contact</Link>
               </li>
             </ul>
           </div>
