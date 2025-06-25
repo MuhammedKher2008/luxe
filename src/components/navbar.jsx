@@ -17,57 +17,53 @@ const Navbar = () => {
     float: "left",
   };
   return (
-    <div class="navbar bg-light">
-      <div class="container">
-        <a style={logo} href="#" class="navbar-brand">
-          lexu
+    <>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          Navbar
         </a>
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end" id="offcanvas" tabindex="-1">
-          <div class="offcanvas-header">
-            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav  ">
-              <li className="mt-4 ">
-                <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/">home</Link>
-              </li>
-              <li className="mt-4">
-                <select
-                  className="form-control w-25 text-center justify-content-center"
-                  onChange={handleSelectChange}
-                  name=""
-                  id=""
-                >
-                  <option>hotel </option>
-                  <option value="/hotel">hotel </option>
-                  <option value="/hotel">luxe hotel </option>
-                  <option value="/hotel">deluxe hotel </option>
-                  <option value="/hotel">king hotel </option>
-                  <option value="/hotel">fivestart hotel </option>
-                </select>
-              </li>
-              <li className="mt-4">
-                <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/service">service</Link>
-              </li >
-              <li className="mt-4">
-                <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/blog">blog</Link>
-              </li >
-              <li className="mt-4">
-                <Link style={{color:"black" , textDecoration:"none", fontSize:"18px"}} to="/contact">contact</Link>
-              </li>
-            </ul>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <Link to="/" class="nav-link" >
+                Home <span class="sr-only">(current)</span>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/hotel" class="nav-link">
+                hotel
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/service" class="nav-link" >
+                service
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/blog" class="nav-link " >
+                blog
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/contact" class="nav-link " >
+                contact
+              </Link>
+            </li>
+          </ul>
         </div>
-      </div>
-    </div>
+      </nav>
+    </>
   );
 };
 
